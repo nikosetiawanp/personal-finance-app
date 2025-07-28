@@ -1,13 +1,5 @@
 import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarHeader,
-  SidebarProvider
-} from './components/ui/sidebar'
 
 function App(): React.JSX.Element {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
