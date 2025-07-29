@@ -53,7 +53,8 @@
   }
 
   .text-preset-3,
-  h3 {
+  h3,
+  li {
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0px;

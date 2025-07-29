@@ -12,7 +12,7 @@ function WindowFrame() {
     window.electronAPI?.close()
   }
   return (
-    <header className="flex justify-end gap-[1px] bg-grey-900 h-[32px] w-screen absolute top-0 left-0 draggable">
+    <header className="flex justify-end gap-[1px] bg-grey-900 h-[32px] border-b border-b-grey-500 w-full z-[1000] fixed top-0 left-0 draggable">
       {/* Minimize */}
       <button onClick={() => handleMinimize()} className={clsx(baseStyle, 'hover:bg-grey-500')}>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff">
