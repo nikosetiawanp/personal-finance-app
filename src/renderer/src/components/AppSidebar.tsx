@@ -11,17 +11,18 @@ import IconNavBudgets from '../assets/images/icon-nav-budgets.svg?react'
 import IconNavPots from '../assets/images/icon-nav-pots.svg?react'
 import IconNavRecurringBills from '../assets/images/icon-nav-recurring-bills.svg?react'
 
+const menuStyle = 'fill-grey-300 min-w-[24px] group-hover:fill-white'
 const menus = [
-  { title: 'Overview', icon: <IconNavOverview className="fill-grey-300 group-hover:fill-white" /> },
+  { title: 'Overview', icon: <IconNavOverview className={menuStyle} /> },
   {
     title: 'Transactions',
-    icon: <IconNavTransactions className="fill-grey-300 group-hover:fill-white" />
+    icon: <IconNavTransactions className={menuStyle} />
   },
-  { title: 'Budgets', icon: <IconNavBudgets className="fill-grey-300 group-hover:fill-white" /> },
-  { title: 'Pots', icon: <IconNavPots className="fill-grey-300 group-hover:fill-white" /> },
+  { title: 'Budgets', icon: <IconNavBudgets className={menuStyle} /> },
+  { title: 'Pots', icon: <IconNavPots className={menuStyle} /> },
   {
     title: 'Recurring bills',
-    icon: <IconNavRecurringBills className="fill-grey-300 group-hover:fill-white" />
+    icon: <IconNavRecurringBills className={menuStyle} />
   }
 ]
 
