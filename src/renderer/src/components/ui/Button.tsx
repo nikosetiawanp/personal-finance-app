@@ -21,7 +21,8 @@ function Button({ children, variant = 'primary', onClick, className, Icon }: But
           'bg-grey-900 border-grey-900 hover:bg-grey-500 hover:border-grey-500 text-white font-bold',
         variant === 'secondary' &&
           'bg-beige-100 border-beige-100 text-grey-900 hover:bg-white hover:border-grey-500 font-bold',
-        variant === 'tertiary' && 'bg-transparent border-none text-grey-500 hover:text-grey-900',
+        variant === 'tertiary' &&
+          'px-0 py-0 bg-transparent border-none text-grey-500 hover:text-grey-900',
         variant === 'destructive' && 'bg-red bogder-red text-white font-bold hover:opacity-80',
         className
       )}

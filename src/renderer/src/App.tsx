@@ -12,7 +12,7 @@ function App(): React.JSX.Element {
     <main className="flex bg-beige-100 h-screen">
       <WindowFrame />
       <AppSidebar />
-      <section className="w-full pt-8">
+      <section className="w-full mt-8 overflow-y-auto no-scrollbar">
         <Routes>
           <Route path="/overview" element={<OverviewPage />} />
           <Route path="/transactions" element={<TransactionsPage />} />
