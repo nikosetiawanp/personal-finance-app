@@ -38,10 +38,14 @@ function TransactionsPage() {
     return new Date(b.date).getTime() - new Date(a.date).getTime() // default: 'Newest'
   })
 
-  const numberOfPages =
-    Math.floor(sortedTransactions.length / 10) > 0 ? Math.floor(sortedTransactions.length / 10) : 1
+  const searchResult = sortedTransactions.filter((transaction) =>
+    transaction.name.toLowerCase().includes(searchInput.toLocaleLowerCase())
+  )
 
-  const paginated = sortedTransactions.slice((page - 1) * 10, page * 10)
+  const paginated = searchResult.slice((page - 1) * 10, page * 10)
+
+  const numberOfPages =
+    Math.floor(paginated.length / 10) > 0 ? Math.floor(sortedTransactions.length / 10) : 1
 
   useEffect(() => {
     setPage(1)
@@ -53,7 +57,14 @@ function TransactionsPage() {
       <Paper className="gap-5 min-w-[800px] h-auto overflow-x-hidden">
         {/* Filters */}
 
-        <Toolbar sort={sort} setSort={setSort} category={category} setCategory={setCategory} />
+        <Toolbar
+          sort={sort}
+          setSort={setSort}
+          category={category}
+          setCategory={setCategory}
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+        />
 
         {/* Table */}
         <table>
@@ -132,7 +143,7 @@ function Dropdown({ options, value, onChange }: DropdownProps) {
   )
 }
 
-function Toolbar({ sort, setSort, category, setCategory }) {
+function Toolbar({ sort, setSort, category, setCategory, searchInput, setSearchInput }) {
   const sortOptions = ['Latest', 'Oldest', 'A to Z', 'Z to A', 'Highest', 'Lowest']
   const categoryOptions = [
     'All Transactions',
@@ -144,7 +155,14 @@ function Toolbar({ sort, setSort, category, setCategory }) {
   ]
   return (
     <div className="flex justify-between items-center gap-8">
-      <Input id="search" type="search" placeholder="Search transaction" EndIcon={IconSearch} />
+      <Input
+        id="search"
+        type="search"
+        placeholder="Search transaction"
+        EndIcon={IconSearch}
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)}
+      />
       <div className="flex items-center gap-6">
         {/* Sort by */}
         <div className="flex items-center gap-2">

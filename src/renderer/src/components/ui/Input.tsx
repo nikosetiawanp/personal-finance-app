@@ -25,12 +25,14 @@ type InputProps = {
   id: string
   type: InputType
   label?: string
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
   EndIcon?: React.FC<React.SVGProps<SVGSVGElement>>
   StartIcon?: React.FC<React.SVGProps<SVGSVGElement>>
 }
 
-function Input({ id, type, label, placeholder, EndIcon, StartIcon }: InputProps) {
+function Input({ id, type, label, value, onChange, placeholder, EndIcon, StartIcon }: InputProps) {
   return (
     <div className="flex flex-col gap-1 w-fit h-fit">
       {label && (
@@ -52,6 +54,8 @@ function Input({ id, type, label, placeholder, EndIcon, StartIcon }: InputProps)
           )}
           placeholder={placeholder}
           autoComplete="off"
+          value={value}
+          onChange={onChange}
         />
         {EndIcon && (
           <EndIcon className="w-[16px] h-[16px] absolute right-5 top-1/2 -translate-y-1/2" />
