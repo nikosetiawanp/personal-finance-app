@@ -20,15 +20,15 @@ function OverviewPage() {
     <PageLayout>
       <PageTitle>Overview</PageTitle>
       {/* Overview */}
-      <section className="flex gap-6 w-full">
+      <section className="flex gap-6 min-w-[1060px]">
         <SummaryCard variant={'primary'} title={'Current Balance'} amount={4836} />
         <SummaryCard variant={'secondary'} title={'Income'} amount={1270.5} />
         <SummaryCard variant={'secondary'} title={'Expenses'} amount={3167.25} />
       </section>
 
-      <section className="flex gap-6">
+      <section className="flex gap-6 w-full">
         {/* Left */}
-        <div className="flex flex-col gap-6 min-w-[600px]">
+        <div className="flex flex-col gap-6 min-w-[600px] w-full">
           {/* Saving Pot */}
           <SavingPotSummary />
           <TransactionsSummary />
@@ -97,7 +97,7 @@ function SummaryHeader({ title, buttonLabel, path }) {
 function MicroSummary({ name, amount, color }) {
   return (
     <div className="flex gap-4 h-[43px]">
-      <div className={clsx('w-1 h-auto rounded-full', getColorClass(color))}></div>
+      <div className={clsx('w-1 min-w-1 h-auto rounded-full', getColorClass(color))}></div>
       <div className="flex flex-col">
         <span className="text-preset-5 text-grey-500">{name}</span>
         <Amount size="sm" value={amount} decimals={0} />
@@ -201,7 +201,7 @@ function BudgetsSummary() {
     }
   ]
   return (
-    <Paper className="gap-5 h-full">
+    <Paper className="gap-5 h-full min-w-[430px]">
       <SummaryHeader title="My Budgets" buttonLabel="See Details" path="/budgets" />
       <div className="flex items-center gap-4 h-full">
         {/* Chart */}

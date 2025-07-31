@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 
 type DividerProps = {
-  orientation?: 'horizontal' | 'vertical'
+  orientation: 'horizontal' | 'vertical'
 }
 
 function Divider({ orientation }: DividerProps) {
