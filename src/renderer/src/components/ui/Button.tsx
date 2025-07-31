@@ -16,7 +16,7 @@ function Button({ children, variant = 'primary', onClick, className, Icon }: But
     <button
       onClick={onClick}
       className={clsx(
-        'group p-4 rounded-lg text-preset-4 border flex items-center gap-2 hover:cursor-pointer',
+        'group p-4 rounded-lg text-preset-4 border justify-center flex items-center gap-2 hover:cursor-pointer',
         variant === 'primary' &&
           'bg-grey-900 border-grey-900 hover:bg-grey-500 hover:border-grey-500 text-white font-bold',
         variant === 'secondary' &&
