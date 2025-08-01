@@ -9,8 +9,8 @@ function Divider({ orientation }: DividerProps) {
     <div
       className={clsx(
         'bg-grey-100',
-        orientation == 'horizontal' && 'h-[1px] w-full',
-        orientation == 'vertical' && 'w-[1px] h-full'
+        orientation == 'horizontal' && 'min-h-[1px] w-full',
+        orientation == 'vertical' && 'min-w-[1px] h-full'
       )}
     ></div>
   )

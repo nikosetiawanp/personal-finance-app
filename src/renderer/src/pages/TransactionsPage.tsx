@@ -52,7 +52,7 @@ function TransactionsPage() {
   }, [numberOfPages])
 
   return (
-    <PageLayout>
+    <PageLayout className="h-full">
       <PageTitle>Transactions</PageTitle>
       <Paper className="gap-5 min-w-[800px] h-auto overflow-x-hidden">
         {/* Filters */}
