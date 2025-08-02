@@ -9,9 +9,17 @@ type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   className?: string
   Icon?: React.FC<React.SVGProps<SVGSVGElement>>
+  fullWidth?: boolean
 }
 
-function Button({ children, variant = 'primary', onClick, className, Icon }: ButtonProps) {
+function Button({
+  children,
+  variant = 'primary',
+  onClick,
+  className,
+  Icon,
+  fullWidth
+}: ButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -24,6 +32,7 @@ function Button({ children, variant = 'primary', onClick, className, Icon }: But
         variant === 'tertiary' &&
           'px-0 py-0 bg-transparent border-none text-grey-500 hover:text-grey-900',
         variant === 'destructive' && 'bg-red bogder-red text-white font-bold hover:opacity-80',
+        fullWidth && 'w-full',
         className
       )}
     >

@@ -52,7 +52,7 @@ function TransactionsPage() {
   }, [numberOfPages])
 
   return (
-    <PageLayout className="h-full">
+    <PageLayout>
       <PageTitle>Transactions</PageTitle>
       <Paper className="gap-5 min-w-[800px] h-auto overflow-x-hidden">
         {/* Filters */}
@@ -204,6 +204,7 @@ function Pagination({ page, setPage, numberOfPages }) {
       <div className="flex items-center gap-2">
         {pages.map((pageNumber) => (
           <button
+            key={pageNumber}
             className={clsx(
               'w-[40px] h-[40px] rounded-lg border hover:cursor-pointer',
               page === pageNumber && 'border-grey-900 bg-grey-900 text-white',
