@@ -35,7 +35,7 @@ function TransactionsPage() {
     if (sort === 'Z to A') return b.name.localeCompare(a.name)
     if (sort === 'Highest') return b.amount - a.amount
     if (sort === 'Lowest') return a.amount - b.amount
-    return new Date(b.date).getTime() - new Date(a.date).getTime() // default: 'Newest'
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 
   const searchResult = sortedTransactions.filter((transaction) =>
@@ -107,6 +107,7 @@ type DropdownProps = {
   value: string
   onChange
 }
+
 function Dropdown({ options, value, onChange }: DropdownProps) {
   return (
     <DropdownMenu.Root>

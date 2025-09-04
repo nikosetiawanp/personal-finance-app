@@ -16,11 +16,16 @@ import IconCloseModal from '../assets/images/icon-close-modal.svg?react'
 
 import { Profile } from '@renderer/components/Profile'
 import { Amount } from '@renderer/components/Amount'
+import { Input } from '@renderer/components/ui/Input'
+import { SelectTheme } from '@renderer/components/SelectTheme'
 
 function BudgetsPage() {
   return (
     <PageLayout>
-      <PageTitle>Budgets</PageTitle>
+      <div className="flex justify-between items-center">
+        <PageTitle>Budgets</PageTitle>
+        <AddBudget />
+      </div>
       <section className="flex gap-6 w-full">
         {/* Left */}
         <div className="flex flex-col gap-6 min-w-[600px] w-full">
@@ -125,6 +130,59 @@ function BudgetsPage() {
         </div>
       </section>
     </PageLayout>
+  )
+}
+
+function AddBudget() {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <Button>+ Add New Budget</Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className="flex justify-center items-center fixed left-0 top-0 w-screen h-screen z-50 bg-[#000000]/50">
+          <Dialog.Content className="relative flex flex-col gap-5 bg-white p-8 rounded-xl w-[560px]">
+            <div className="flex justify-between items-center">
+              <Dialog.Title className="text-preset-1 text-grey-900">Add New Budget</Dialog.Title>
+              <Dialog.Close className="hover:cursor-pointer">
+                <IconCloseModal />
+              </Dialog.Close>
+            </div>
+            <Dialog.Description className="text-preset-4 text-grey-500">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
+              Pellentesque aliquet nibh nec urna. In nisi neque, aliquet.
+            </Dialog.Description>
+
+            <div className="flex flex-col gap-4 w-full">
+              <Input
+                id={'name'}
+                type={'text'}
+                value={''}
+                label="Budget Name"
+                placeholder="Entertainment"
+                onChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
+                  throw new Error('Function not implemented.')
+                }}
+                fullWidth
+              />
+              <Input
+                id={'name'}
+                type={'number'}
+                value={''}
+                label="Maximum Spending"
+                placeholder="2000"
+                onChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
+                  throw new Error('Function not implemented.')
+                }}
+                startDecorator="$"
+                fullWidth
+              />
+              <SelectTheme />
+            </div>
+          </Dialog.Content>
+        </Dialog.Overlay>
+      </Dialog.Portal>
+    </Dialog.Root>
   )
 }
 

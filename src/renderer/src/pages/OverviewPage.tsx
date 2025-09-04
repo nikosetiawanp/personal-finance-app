@@ -9,7 +9,7 @@ import { Button } from '@renderer/components/ui/Button'
 
 import IconCaretRight from '../assets/images/icon-caret-right.svg?react'
 import IconPot from '../assets/images/icon-pot.svg?react'
-import { getColorClass } from '@renderer/utils/getColorClass'
+import { getColorClass } from '@renderer/utils/color'
 import { Profile } from '@renderer/components/Profile'
 import { Divider } from '@renderer/components/Divider'
 import { Amount } from '@renderer/components/Amount'
